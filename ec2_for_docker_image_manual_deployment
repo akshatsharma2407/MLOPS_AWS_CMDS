@@ -1,0 +1,15 @@
+# inside the ec2 terminal
+
+sudo apt-get update
+sudo apt-get install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+newgrp docker
+sudo docker pull akshatsharma2407/YOUR_IMAGE
+sudo docker run -p 80:8000 -e NAME_OF_TOKEN=TOKEN_HERE akshatsharma2407/YOUR_IMAGE # change the port and give tokens if needed
+
+# in security -> edit enbound rules
+open a http with 0.0.0.0/0 and save
+
+# now your website it live
